@@ -1,0 +1,165 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --Min-height: calc(100vh - 16px);
+}
+
+/*
+ ! FUENTES
+
+.knewave-regular {
+  font-family: "Knewave", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.itim-regular {
+  font-family: "Itim", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.madimi-one-regular {
+  font-family: "Madimi One", serif;
+  font-weight: 400;
+  font-style: normal;
+} */
+
+.Section {
+  min-height: var(--Min-height);
+  background-color: #F0F0F0;
+  scroll-snap-align: start;
+  padding: 8px;
+}
+
+.Section div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: var(--Min-height);
+}
+
+.Sections {
+  height: 100vh;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+}
+
+.Main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Main .vllogo {
+  width: 50%;
+  max-width: 200px;
+}
+
+.Main .Indicator {
+  pointer-events: none;
+  position: fixed;
+  bottom: 5vh;
+  z-index: 100;
+  height: auto !important;
+  opacity: 0;
+  transition: all 2s ease-in-out;
+}
+
+.Main .Indicator.Animated {
+  animation: animateOpacity 2s infinite alternate;
+}
+
+.Main .vllogo.Hidden {
+  animation: removeOpacity .1s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+
+.Main .Indicator .Label {
+  pointer-events: none;
+  font-family: "Itim", serif;
+  color: #434343;
+  font-size: 1.5rem;
+  text-align: center;
+  line-height: 110%;
+}
+
+.Main .Indicator svg {
+  pointer-events: none;
+  width: 4rem;
+  height: 4rem;
+}
+
+.Section div .Title {
+  font-family: "Knewave", serif;
+  color: #7B95FF;
+  text-shadow: black 2px 2px 0;
+  font-size: 2.7rem;
+  text-align: center;
+  line-height: 110%;
+  margin-bottom: calc(2.25rem - 4px);
+}
+
+.Section div .Description {
+  padding: 4px;
+  font-family: "Madimi One", serif;
+  color: black;
+  font-size: 1.35rem;
+  max-width: 500px;
+  text-align: center;
+  line-height: 115%;
+}
+
+@keyframes animateOpacity {
+  0% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}
+
+@keyframes removeOpacity {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+  
+}
+
+/* @keyframes main-animation {
+  0% {
+    width: 100%;
+    position: sticky;
+    padding-right: 0;
+    bottom: 0px;
+    background: transparent;
+  }
+  100% {
+    width: 100%;
+    position: sticky;
+    padding-right: 50%;
+    bottom: calc(((50vh - ( 100vh * 50% )) + 50vh) - 50px);
+    background: transparent;
+  }
+}
+
+@keyframes logo-animation {
+  0% {
+    width: 50%;
+    padding-right: 0;
+    background-color: transparent;
+  }
+  100% {
+    width: 25%;
+    padding-right: 75%;
+    background-color: #DCDCDC;
+  }
+} */

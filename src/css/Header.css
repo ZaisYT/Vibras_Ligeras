@@ -1,0 +1,17 @@
+header {
+  position: sticky;
+  top: 0;
+  background-color: #DCDCDC;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
+header img {
+  width: 25%;
+  max-width: 100px;
+}
+
+header.hidden {
+  display: none;
+}
