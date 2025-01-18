@@ -35,7 +35,7 @@
   padding: 8px;
 }
 
-.Section div {
+.Section > div {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -79,7 +79,6 @@
   animation-fill-mode: forwards;
 }
 
-
 .Main .Indicator .Label {
   pointer-events: none;
   font-family: "Itim", serif;
@@ -95,7 +94,7 @@
   height: 4rem;
 }
 
-.Section div .Title {
+.Section > div .Title {
   font-family: "Knewave", serif;
   color: #7B95FF;
   text-shadow: black 2px 2px 0;
@@ -105,7 +104,7 @@
   margin-bottom: calc(2.25rem - 4px);
 }
 
-.Section div .Description {
+.Section > div .Description {
   padding: 4px;
   font-family: "Madimi One", serif;
   color: black;
@@ -113,6 +112,93 @@
   max-width: 500px;
   text-align: center;
   line-height: 115%;
+}
+
+.Integrantes div > .Handler, .CardHolder {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1000px;
+  align-items: center;
+  padding: 5px;
+}
+
+.CardHolder {
+  padding: 0px;
+}
+
+.Handler:has(.Open) > .CardHolder:not(.Open) {
+  display: none;
+}
+
+.Open > .Card {
+  border-radius: 7px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Open > .Card > div > p, .Open > .Card > div > h1, .Open > .Card > div > h3 {
+  text-align: center !important;
+}
+
+.Open > .Card > div > h1 {
+  text-decoration: underline;
+}
+
+.Open > .Card > .Redes {
+  margin-bottom: 10px;
+}
+
+.Open > .Card > div:first-child {
+  margin-top: 10px;
+}
+
+.Card {
+  padding: 5px;
+  padding-inline: 10px;
+  background-color: #D9D9D9;
+  margin-bottom: 5px;
+  width: calc(100% - 20px);
+  transition: all .2s ease-in-out;
+}
+
+.CardHolder:last-child > .Card {
+  margin-bottom: 0;
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+}
+
+.CardHolder:first-child > .Card{
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+}
+
+.Card h1 {
+  font-family: "Itim", serif;
+  font-size: 1.6rem;
+}
+
+.Card h3, p {
+  font-family: "Itim", serif;
+  font-size: 1.4rem;
+  opacity: .6;
+}
+
+.Card p {
+  opacity: 1;
+  font-size: 1.3rem;
+}
+
+.Redes > svg {
+  width: 1.8rem;
+  height: 1.8rem;
+  margin-right: 5px;
+}
+
+.Redes > svg:last-child {
+  margin-right: 0;
 }
 
 @keyframes animateOpacity {
